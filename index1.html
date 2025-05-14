@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time</title>
+    <style>
+        body{
+            background-color: rgb(38, 171, 204);
+        }
+        div{
+          
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+
+        }
+        /* #second{
+            animation-name: seconds;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            position: relative;
+        } */
+        /* @keyframes seconds{
+            0%{
+                font-size: 50px;
+                /* top: -10px; */
+            /* } */
+             /* 50%{
+                 font-size: 75px;
+                  /* top: 0px; */
+
+            /* } */ */
+
+            /* 100%{
+                 font-size: 100px;
+                  top: 0px;
+
+            } */
+            /* 50%{
+                 top: 10px;
+
+            }
+            50%{
+                 top: 0px;
+
+            } */
+        /* } */ */
+    </style>
+</head>
+<body>
+    <div>
+
+        <span id="hour" style="color:blue; font-size: 100px;"></span>
+        <span id="minute" style="color:orangered; font-size: 100px;"></span>
+        <span id="second" style="color: green; font-size: 100px;"></span>
+    </div>
+  <script>
+       setInterval(()=>{
+        let hours=document.getElementById('hour');
+        let minutes=document.getElementById('minute');
+        let seconds=document.getElementById('second');
+        let date=new Date();
+       let hour=date.getHours();
+       let minute=date.getMinutes();
+       let second=date.getSeconds();
+       hours.innerHTML=hour+":";
+        minutes.innerHTML=minute+":";
+          seconds.innerHTML=second;
+          let x='0123456789ABCDEF';
+          let color='#'
+          for(i=0;i<6;i++)
+          {
+             let ran=Math.floor(Math.random()*10);
+            //  console.log(ran)
+             let val=x[ran];
+             color=color+val;
+             console.log(val);
+            }
+          seconds.style.color=color;
+        //   hours.style.color=color;
+       },1000)
+    </script>
+</body>
+</html>
